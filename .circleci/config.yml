@@ -1,18 +1,36 @@
 board = []
-
+continuing=True
+whichPlayer=("[x]")
+def printBoard(board):
+   for y in (board):
+    for x in y:
+        print (x, end = "")
+    print() 
 
 
 for y in range(0,6,1):
     board.append([])
     for x in range (0, 7, 1):
         board[y].append("[.]")
-for y in (board):
-    for x in y:
-        print (x, end = "")
-    print()
-userInput=input("choose a column to put your piece into (between 1 and 7")
-if not int(userInput) in (1,2,3,4,5,6,7):
-    print ("your position is invalid. please insert a new position")
-if userInput in (1,2,3,4,5,6,7)
+printBoard(board)
+print ("welcome to connect 4!")
+while continuing:
+    userInput=input("choose a column to put your piece into (between 1 and 7")
+    if not int(userInput) in (1,2,3,4,5,6,7):
+        print ("your position is invalid. please insert a new position")
+    if int(userInput) in (1,2,3,4,5,6,7):
+        print ("You have chosen your position")
+        playerX=int(userInput)-1
+    for playerY in range(5,-1,-1):
+        if board[playerY][playerX]=="[.]":
+            board[playerY][playerX]=whichPlayer
+            if whichPlayer=="[x]":
+                whichPlayer=("[o]")
+            elif whichPlayer=="[o]":
+                whichPlayer=("[x]")
+            break
+        elif playerY<=0:
+            print("that row is full")
     
-    
+        
+    printBoard(board)
