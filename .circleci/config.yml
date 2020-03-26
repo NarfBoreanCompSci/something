@@ -1,6 +1,7 @@
 board = []
 continuing=True
 whichPlayer=("[x]")
+tie=0
 def printBoard(board):
    for y in (board):
     for x in y:
@@ -24,13 +25,45 @@ while continuing:
     for playerY in range(5,-1,-1):
         if board[playerY][playerX]=="[.]":
             board[playerY][playerX]=whichPlayer
+            for y in range (0, 3, 1):
+                for x in range (0, 7, 1):
+                    if board[y][x]== whichPlayer and board[y+1] [x]== whichPlayer and board[y+2] [x]== whichPlayer and board[y+3] [x]== whichPlayer:
+                        printBoard(board)
+                        print (whichPlayer + " wins")
+                        exit()
+            for y in range (0, 6, 1):
+                for x in range (0, 4, 1):
+                    if board[y][x]== whichPlayer and board[y] [x+1]== whichPlayer and board[y] [x+2]== whichPlayer and board[y] [x+3]== whichPlayer:
+                        printBoard(board)
+                        print (whichPlayer + " wins")
+                        exit()
+            for y in range (0, 3, 1):
+                for x in range (0, 4, 1):
+                    if board[y][x]== whichPlayer and board[y+1] [x+1]== whichPlayer and board[y+2] [x+2]== whichPlayer and board[y+3] [x+3]== whichPlayer:
+                        printBoard(board)
+                        print (whichPlayer + " wins")
+                        exit()
+            for y in range (0, 3, 1):
+                for x in range (3, 7, 1):
+                    if board[y][x]== whichPlayer and board[y+1] [x-1]== whichPlayer and board[y+2] [x-2]== whichPlayer and board[y+3] [x-3]== whichPlayer:
+                        printBoard(board)
+                        print (whichPlayer + " wins")
+                        exit()
+
             if whichPlayer=="[x]":
                 whichPlayer=("[o]")
             elif whichPlayer=="[o]":
                 whichPlayer=("[x]")
+            print (whichPlayer+"'s turn")
+            tie+=1
+            if tie>=42:
+                printBoard(board)
+                print ("the game has tied!")
+                exit()
             break
         elif playerY<=0:
             print("that row is full")
-    
+            
         
     printBoard(board)
+    
