@@ -1,0 +1,17 @@
+class person:
+    legs=2
+    arms=2
+    def __init__ (self, hairColor, name):
+        self.hairColor=hairColor
+        self.name=name
+    def getHairColor(self):
+        return self.hairColor
+    def setHairColor(self, newHairColor):
+        self.hairColor=newHairColor
+    def toString(self):
+        return "my name is "+(self.name)+" I have "+str( self.legs)+" legs, and "+ str(self.arms)+" arms"
+
+
+timmy=person("orange", "timmy")
+print (timmy.toString())
+        
