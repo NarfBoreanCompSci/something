@@ -30,5 +30,33 @@ class person:
 
 timmy=person("orange", "timmy")
 print (str(timmy))
+
+class card:
+    def __init__ (self, suit, number):
+        self.suit=suit
+        self.number=number
+    def setSuit(self,suit):
+        self.suit=suit
+    def setNumber(self,number):
+        self.number=number
+    def getSuit(self):
+        return self.suit
+    def getNumber(self):
+        return self.number
+    def __str__(self):
+        if self.number==13:
+            return "king of "+ self.suit
+        elif self.number==12:
+            return "queen of "+ self.suit
+        elif self.number==11:
+            return "jack of "+ self.suit
+        elif self.number==1:
+            return "ace of "+ self.suit
+        else:
+            return (str(self.number) +"of"+ self.suit)
+            
+card1=card("spades", 10)
+print (str(card1))
+    
         
         
