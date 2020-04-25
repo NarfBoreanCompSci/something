@@ -67,3 +67,21 @@ while continuing:
         
     printBoard(board)
     
+board = []
+continuing=True
+occupiedTrue=("[x]")
+tie=0
+def printBoard(board):
+   for y in (board):
+    for x in y:
+        print (x, end = "")
+    print() 
+for y in range(0,20,1):
+    board.append([])
+    for x in range (0, 10, 1):
+        board [y].append("[.]")
+board [1][4]=occupiedTrue
+board [1][5]=occupiedTrue
+board [1][6]=occupiedTrue
+board [2][5]=occupiedTrue
+printBoard(board)
